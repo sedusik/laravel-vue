@@ -10,7 +10,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="person in persons">
+            <tr v-for="person in oldPerson">
                 <th scope="row">{{ person.id }}</th>
                 <td>{{ person.name }}</td>
                 <td>{{ person.age }}</td>
@@ -47,6 +47,14 @@ export default {
                     job: 'rest',
                 },
             ]
+        }
+    },
+
+    computed: {
+        oldPerson() {
+            return this.persons.filter(function(person) {
+                return person.age > 22
+            })
         }
     }
 }
