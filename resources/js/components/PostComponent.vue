@@ -1,40 +1,46 @@
 <template>
     <div>
-        <SinglePostComponent></SinglePostComponent>
-        <div> Name: {{name}}</div>
-        <div>Job: {{ivanJob}}</div>
-        <button @click="sayHello"> Hello</button>
-        <button @click="sayHi"> Hi</button>
+<!--        <SinglePostComponent></SinglePostComponent>-->
+        <CreateComponent></CreateComponent>
+<!--        <div> Name: {{name}}</div>-->
+<!--        <div>Job: {{ivanJob}}</div>-->
+<!--        <button @click="sayHello"> Hello</button>-->
+<!--        <button @click="sayHi"> Hi</button>-->
     </div>
 </template>
 
 <script>
-import SinglePostComponent from "@/components/SinglePostComponent.vue";
+import SinglePostComponent from "./SinglePostComponent.vue";
+import CreateComponent from "./CreateComponent.vue";
 export default {
     name: "PostComponent",
 
     data() {
         return {
-            name: 'Ivan',
-            age: 18
+        //     name: 'Ivan',
+        //     age: 18
         }
+    },
+
+    mounted() {
+
     },
 
     methods: {
-        sayHello() {
-            console.log('Hello')
-        },
-        sayHi() {
-            console.log('Hi')
-        },
+        // sayHello() {
+        //     console.log('Hello')
+        // },
+        // sayHi() {
+        //     console.log('Hi')
+        // },
     },
 
     computed: {
-        ivanJob() {
-            return this.name + ' работает дизайнером'
-        }
+        // ivanJob() {
+        //     return this.name + ' работает дизайнером'
+        // }
     },
-    components: {SinglePostComponent}
+    components: {CreateComponent, SinglePostComponent}
 }
 </script>
 
