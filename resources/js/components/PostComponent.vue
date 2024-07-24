@@ -2,6 +2,7 @@
     <div>
 <!--        <SinglePostComponent></SinglePostComponent>-->
         <CreateComponent></CreateComponent>
+        <IndexComponent></IndexComponent>
 <!--        <div> Name: {{name}}</div>-->
 <!--        <div>Job: {{ivanJob}}</div>-->
 <!--        <button @click="sayHello"> Hello</button>-->
@@ -12,6 +13,7 @@
 <script>
 import SinglePostComponent from "./SinglePostComponent.vue";
 import CreateComponent from "./CreateComponent.vue";
+import IndexComponent from "./IndexComponent.vue";
 export default {
     name: "PostComponent",
 
@@ -40,7 +42,11 @@ export default {
         //     return this.name + ' работает дизайнером'
         // }
     },
-    components: {CreateComponent, SinglePostComponent}
+    components: {
+        CreateComponent,
+        SinglePostComponent,
+        IndexComponent
+    }
 }
 </script>
 
