@@ -40,10 +40,7 @@ export default {
                     this.name = null
                     this.age = null
                     this.job = null
-                    console.log(res);
-                })
-                .catch(error => {
-                    console.error("Ошибка при добавлении человека:", error);
+                    this.$parent.$refs.index.getPeople()
                 })
         }
     }
