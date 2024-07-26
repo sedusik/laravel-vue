@@ -51,6 +51,8 @@ export default {
 
     mounted() {
         this.getPeople()
+
+        console.log(this.$parent);
     },
 
     methods: {
@@ -85,6 +87,10 @@ export default {
                 .then( res => {
                     this.getPeople()
                 })
+        },
+
+        indexLog() {
+            console.log('this is index component');
         }
     }
 }

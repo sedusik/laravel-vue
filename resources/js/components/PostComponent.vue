@@ -2,11 +2,7 @@
     <div>
 <!--        <SinglePostComponent></SinglePostComponent>-->
         <CreateComponent></CreateComponent>
-        <IndexComponent></IndexComponent>
-<!--        <div> Name: {{name}}</div>-->
-<!--        <div>Job: {{ivanJob}}</div>-->
-<!--        <button @click="sayHello"> Hello</button>-->
-<!--        <button @click="sayHi"> Hi</button>-->
+        <IndexComponent ref="index"></IndexComponent>
     </div>
 </template>
 
@@ -19,28 +15,22 @@ export default {
 
     data() {
         return {
-        //     name: 'Ivan',
-        //     age: 18
+
         }
     },
 
     mounted() {
-
+        console.log(this.$refs.index);
     },
 
     methods: {
-        // sayHello() {
-        //     console.log('Hello')
-        // },
-        // sayHi() {
-        //     console.log('Hi')
-        // },
+        parentLog() {
+            console.log('this is post component');
+        }
     },
 
     computed: {
-        // ivanJob() {
-        //     return this.name + ' работает дизайнером'
-        // }
+
     },
     components: {
         CreateComponent,
