@@ -19,6 +19,15 @@
             </tbody>
         </table>
     </div>
+    <div>
+        Color: {{ obj.color }}
+    </div>
+    <div>
+        Number: {{ obj.number }}
+    </div>
+    <div>
+        isPublished: {{ obj.isPublished ? 'published' : 'not published' }}
+    </div>
 </template>
 
 <script>
@@ -49,6 +58,10 @@ export default {
             ]
         }
     },
+
+    props: [
+        'obj'
+    ],
 
     computed: {
         oldPerson() {

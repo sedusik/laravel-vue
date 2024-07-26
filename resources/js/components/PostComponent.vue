@@ -1,8 +1,8 @@
 <template>
     <div>
-<!--        <SinglePostComponent></SinglePostComponent>-->
         <CreateComponent></CreateComponent>
         <IndexComponent ref="index"></IndexComponent>
+        <SinglePostComponent :obj="obj"></SinglePostComponent>
     </div>
 </template>
 
@@ -15,7 +15,11 @@ export default {
 
     data() {
         return {
-
+            obj: {
+                color: 'red',
+                number: 33,
+                isPublished: true,
+            }
         }
     },
 
