@@ -8,6 +8,7 @@
                 <th scope="col">Возраст</th>
                 <th scope="col">Должность</th>
                 <th scope="col">Редактирование</th>
+                <th scope="col">Удаление</th>
             </tr>
             </thead>
             <tbody>
@@ -18,6 +19,7 @@
                     <td>{{ person.age }}</td>
                     <td>{{ person.job }}</td>
                     <td><a href="#" @click.prevent="changeEditPersonId(person.id, person.name, person.age, person.job)" class="btn btn-success">Редактировать</a></td>
+                    <td><a href="#" @click.prevent="deletePerson(person.id)" class="btn btn-danger">Удалить</a></td>
                 </tr>
                 <tr :class="isEdit(person.id) ? '' : 'd-none'">
                     <th scope="row">{{ person.id }}</th>
@@ -73,6 +75,13 @@ export default {
         updatePerson(id) {
             this.editPersonId = null
             axios.patch(`/api/people/${id}`, {name: this.name, age: this.age, job: this.job})
+                .then( res => {
+                    this.getPeople()
+                })
+        },
+
+        deletePerson(id) {
+            axios.delete(`/api/people/${id}`)
                 .then( res => {
                     this.getPeople()
                 })
