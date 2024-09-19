@@ -15,19 +15,9 @@ import axios from "axios";
 export default {
     name: "ShowComponent",
 
-    data() {
-        return {
-
-        }
-    },
-
     props: [
         'person'
     ],
-
-    mounted() {
-
-    },
 
     methods: {
 
@@ -43,9 +33,10 @@ export default {
         deletePerson(id) {
             axios.delete(`/api/people/${id}`)
                 .then( res => {
-                    this.getPeople()
+                    this.$parent.getPeople()
                 })
-        }
+        },
+
     }
 }
 </script>

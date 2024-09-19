@@ -1,9 +1,12 @@
 <template>
+    <div class="h3 mb-3 pt-4">
+        Список сотрудников компании
+    </div>
     <div>
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Имя</th>
                 <th scope="col">Возраст</th>
                 <th scope="col">Должность</th>
@@ -40,8 +43,6 @@ export default {
 
     mounted() {
         this.getPeople()
-
-        console.log(this.$parent);
     },
 
     components: {
@@ -57,37 +58,9 @@ export default {
                 })
         },
 
-        changeEditPersonId(id, name, age, job) {
-            this.editPersonId = id
-            let editName = `edit_${id}`
-            let fullEditName = this.$refs[editName][0]
-            fullEditName.name = name
-            fullEditName.age = age
-            fullEditName.job = job
-        },
-
         isEdit(id) {
             return this.editPersonId === id
         },
-
-        updatePerson(id) {
-            this.editPersonId = null
-            axios.patch(`/api/people/${id}`, {name: this.name, age: this.age, job: this.job})
-                .then( res => {
-                    this.getPeople()
-                })
-        },
-
-        deletePerson(id) {
-            axios.delete(`/api/people/${id}`)
-                .then( res => {
-                    this.getPeople()
-                })
-        },
-
-        indexLog() {
-            console.log('this is index component');
-        }
     }
 }
 </script>

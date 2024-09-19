@@ -25,10 +25,6 @@ export default {
         }
     },
 
-    mounted() {
-
-    },
-
     methods: {
 
         updatePerson(id) {
